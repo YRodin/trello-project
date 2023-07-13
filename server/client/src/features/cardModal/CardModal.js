@@ -96,11 +96,21 @@ const CardModal = ({ cardId, listId, boardId, visible, onClose }) => {
                 </Form.Select>
                 <hr />
 
-                {/* Move and Archive buttons */}
+                {/* Move Card Select */}
+                <Modal.Title>Move Card to</Modal.Title>
+                <Form.Select className={styles.selectBtn}>
+                  <option>List</option>
+                  {board.lists.map((list) => (
+                    <option key={list._id}>{list.name}</option>
+                  ))}
+                </Form.Select>
+                <hr />
+
+                {/* Archive button */}
                 <Modal.Title>Actions</Modal.Title>
-                <div className={styles.actionButton}>Move</div>
                 <div className={styles.actionButton}>Archive</div>
                 <hr />
+                
               </Col>
             </Row>
           </Container>
